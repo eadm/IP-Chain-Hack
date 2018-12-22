@@ -8,7 +8,7 @@ android {
     buildToolsVersion versions.buildTools
 
     defaultConfig {
-        applicationId "ru.nobird.android.template"
+        applicationId "ru.nobird.android.ipchain"
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
         versionCode versions.code

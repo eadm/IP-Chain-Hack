@@ -4,7 +4,7 @@ import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_patents.*
 import ru.nobird.android.ipchain.App
 import ru.nobird.android.ipchain.R
 import ru.nobird.android.ipchain.presentation.patents.PatentsPresenter
@@ -19,14 +19,11 @@ class PatentsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_patents)
 
         injectComponent()
         presenter = ViewModelProviders.of(this, viewModelFactory).get(PatentsPresenter::class.java)
 
-        button.setOnClickListener {
-            presenter.fetchObjectTypes()
-        }
     }
 
     private fun injectComponent() {
