@@ -2,4 +2,13 @@
 <resources>
     <string name="patents_title">Патенты</string>
     <string name="patent_title">Добавление патента</string>
+    
+    <string name="tab_1_title">ОИС</string>
+    <string name="tab_1_subtitle">дабавление ОИС</string>
+
+    <string name="tab_2_title">Алгоритм</string>
+    <string name="tab_2_subtitle">дабавление алгоритма</string>
+
+    <string name="tab_3_title">Интерфейсы</string>
+    <string name="tab_3_subtitle">дабавление интерфейсов</string>
 </resources>

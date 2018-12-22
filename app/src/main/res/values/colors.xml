@@ -4,5 +4,7 @@
     <color name="colorPrimaryDark">#2C2C37</color>
     <color name="colorAccent">#EA6E39</color>
 
+    <color name="colorDark">#353540</color>
     <color name="white">@android:color/white</color>
+    <color name="gray_tab_separator">#1FFFFFFF</color>
 </resources>

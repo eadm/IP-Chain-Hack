@@ -2,4 +2,13 @@
     <string name="app_name" translatable="false">IP Chain</string>
     <string name="patents_title">Patents</string>
     <string name="patent_title">Add a patent</string>
+
+    <string name="tab_1_title">OIS</string>
+    <string name="tab_1_subtitle">add OIS</string>
+
+    <string name="tab_2_title">Algorithm</string>
+    <string name="tab_2_subtitle">add algorithm</string>
+
+    <string name="tab_3_title">Interface</string>
+    <string name="tab_3_subtitle">add interfaces</string>
 </resources>
