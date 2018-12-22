@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.NestedScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginTop="@dimen/tab_counter_top_margin"
-            android:background="@drawable/bg_tab_inactive"
+            android:background="@drawable/bg_tab_active"
             android:gravity="center"
             android:text="2"
             app:layout_constraintEnd_toStartOf="@+id/counter3"
@@ -136,168 +136,134 @@
             app:layout_constraintTop_toBottomOf="@+id/tab3Title" />
 
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/titleFieldLayout"
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/inputDataHint"
             app:layout_constraintTop_toBottomOf="@id/tab2SubTitle"
             android:layout_marginTop="@dimen/tab_counter_top_margin"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:hintEnabled="true">
-
-            <android.support.v7.widget.AppCompatEditText
-                android:id="@+id/titleField"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/field_patent_title"
-                android:imeOptions="flagNoFullscreen|actionSend"
-                android:inputType="text"/>
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/annotationFieldLayout"
-            app:layout_constraintTop_toBottomOf="@id/titleFieldLayout"
-            android:layout_marginTop="@dimen/tab_counter_top_margin"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:hintEnabled="true">
-
-            <android.support.v7.widget.AppCompatEditText
-                android:id="@+id/annotationField"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/field_patent_annotation"
-                android:imeOptions="flagNoFullscreen"
-                android:inputType="textMultiLine"/>
-        </android.support.design.widget.TextInputLayout>
-
-        <RelativeLayout
-            android:id="@+id/authorsFieldLayout"
-            app:layout_constraintTop_toBottomOf="@id/annotationFieldLayout"
-            android:layout_marginTop="@dimen/tab_counter_top_margin"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="@string/field_patent_input_data"
+            style="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintEnd_toEndOf="parent" />
 
-            <android.support.v7.widget.AppCompatImageView
-                android:id="@+id/addAuthor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                app:srcCompat="@drawable/ic_add_author" />
-
-            <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/authorsFieldHint"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_toStartOf="@id/addAuthor"
-                android:text="@string/field_patent_authors"
-                android:textSize="12sp" />
-
-            <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/authorsField"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toStartOf="@id/addAuthor"
-                android:layout_below="@id/authorsFieldHint"
-                android:hint="@string/field_patent_authors_hint"
-                android:layout_marginTop="8dp"
-                android:layout_alignParentStart="true"/>
-
-        </RelativeLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/keywordsFieldLayout"
-            app:layout_constraintTop_toBottomOf="@id/authorsFieldLayout"
-            android:layout_marginTop="@dimen/tab_counter_top_margin"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/inputField"
+            app:layout_constraintTop_toBottomOf="@id/inputDataHint"
+            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:hintEnabled="true">
-
-            <android.support.v7.widget.AppCompatEditText
-                android:id="@+id/keywordsField"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/field_patent_keywords"
-                android:imeOptions="flagNoFullscreen"
-                android:inputType="text" />
-
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/organizationFieldLayout"
-            app:layout_constraintTop_toBottomOf="@id/keywordsFieldLayout"
-            android:layout_marginTop="@dimen/tab_counter_top_margin"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:hintEnabled="true">
-
-            <android.support.v7.widget.AppCompatAutoCompleteTextView
-                android:id="@+id/organizationField"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/field_patent_organization"
-                android:imeOptions="flagNoFullscreen"
-                android:inputType="text" />
-
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.v7.widget.LinearLayoutCompat
-            android:id="@+id/countryFieldLayout"
-            app:layout_constraintTop_toBottomOf="@id/organizationFieldLayout"
-            android:layout_marginTop="@dimen/tab_counter_top_margin"
             android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <android.support.v7.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/field_patent_country"
-                android:textSize="12sp" />
-
-            <android.support.v7.widget.AppCompatSpinner
-                android:id="@+id/countryField"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp" />
-
-        </android.support.v7.widget.LinearLayoutCompat>
+            android:layout_marginEnd="20dp" />
 
         <android.support.v7.widget.AppCompatButton
-            android:id="@+id/nextButton1"
+            android:id="@+id/inputFieldAdd"
+            app:layout_constraintTop_toBottomOf="@id/inputField"
+            android:text="@string/action_add"
+            android:background="@drawable/bg_button"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/outputDataHint"
+            app:layout_constraintTop_toBottomOf="@id/inputFieldAdd"
+            android:layout_marginTop="@dimen/tab_counter_top_margin"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/field_patent_output_data"
+            style="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/outputField"
+            app:layout_constraintTop_toBottomOf="@id/outputDataHint"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp" />
+
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/descriptionTypeHint"
+            app:layout_constraintTop_toBottomOf="@id/outputField"
+            android:layout_marginTop="@dimen/tab_counter_top_margin"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/field_patent_description_type"
+            style="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/addFileHint"
+            app:layout_constraintTop_toBottomOf="@id/descriptionTypeHint"
+            android:layout_marginTop="@dimen/tab_counter_top_margin"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/field_patent_add_file"
+            style="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/addFile"
+            app:layout_constraintTop_toBottomOf="@id/addFileHint"
+            android:text="@string/action_add"
+            android:background="@drawable/bg_button"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/prevButton2"
+            android:background="@drawable/bg_button"
+            android:textColor="@color/white"
+            android:text="@string/action_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/nextButton2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addFile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="8dp" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/nextButton2"
             android:background="@drawable/bg_button_accent"
             android:textColor="@color/white"
             android:text="@string/action_next"
-            app:layout_constraintTop_toBottomOf="@id/countryFieldLayout"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_width="match_parent"
+            app:layout_constraintStart_toEndOf="@id/prevButton2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addFile"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp" />
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp" />
 
     </android.support.constraint.ConstraintLayout>
+
 </android.support.v4.widget.NestedScrollView>

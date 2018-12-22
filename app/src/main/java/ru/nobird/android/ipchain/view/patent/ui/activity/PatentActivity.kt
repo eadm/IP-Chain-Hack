@@ -19,7 +19,7 @@ class PatentActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.view_patent_tab_1)
+        setContentView(R.layout.view_patent_tab_2)
 
         injectComponent()
         presenter = ViewModelProviders.of(this, viewModelFactory).get(PatentPresenter::class.java)
