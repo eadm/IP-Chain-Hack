@@ -15,6 +15,7 @@
     <string name="field_patent_title">Title</string>
     <string name="field_patent_annotation">Annotation</string>
     <string name="field_patent_authors">Authors</string>
+    <string name="field_patent_authors_hint">Add an author&#8230;</string>
     <string name="field_patent_keywords">Keywords</string>
     <string name="field_patent_organization">Organization</string>
     <string name="field_patent_country">Country</string>

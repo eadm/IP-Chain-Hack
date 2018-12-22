@@ -14,7 +14,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name="ru.nobird.android.ipchain.view.patents.ui.activity.PatentsActivity"
-            android:label="@string/patents_title">
+            android:label="@string/patents_title"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -22,7 +23,8 @@
         </activity>
         <activity
             android:name=".view.patent.ui.activity.PatentActivity"
-            android:label="@string/patent_title" />
+            android:label="@string/patent_title"
+            android:screenOrientation="portrait"/>
 
     </application>
 </manifest>

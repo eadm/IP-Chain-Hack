@@ -178,7 +178,7 @@
                 android:inputType="textMultiLine"/>
         </android.support.design.widget.TextInputLayout>
 
-        <android.support.v7.widget.LinearLayoutCompat
+        <RelativeLayout
             android:id="@+id/authorsFieldLayout"
             app:layout_constraintTop_toBottomOf="@id/annotationFieldLayout"
             android:layout_marginTop="@dimen/tab_counter_top_margin"
@@ -189,15 +189,34 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
-            <android.support.v7.widget.AppCompatTextView
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/addAuthor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                app:srcCompat="@drawable/ic_add_author" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/authorsFieldHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@id/addAuthor"
                 android:text="@string/field_patent_authors"
                 android:textSize="12sp" />
 
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/authorsField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/addAuthor"
+                android:layout_below="@id/authorsFieldHint"
+                android:hint="@string/field_patent_authors_hint"
+                android:layout_marginTop="8dp"
+                android:layout_alignParentStart="true"/>
 
-
-        </android.support.v7.widget.LinearLayoutCompat>
+        </RelativeLayout>
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/keywordsFieldLayout"
