@@ -28,7 +28,10 @@
     <string name="field_patent_description_type_hint">Type</string>
     <string name="field_patent_add_file">Add file</string>
 
+    <string name="field_patent_used_interfaces">Used interfaces</string>
+
     <string name="action_add">Add</string>
+    <string name="action_save">Save</string>
 
 
     <string name="action_next">Next</string>

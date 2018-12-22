@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/counter1"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="@dimen/tab_counter_top_margin"
+            android:background="@drawable/bg_tab_active"
+            android:gravity="center"
+            android:layout_marginStart="@dimen/tab_counter_horizontal_margin"
+            android:text="1"
+            app:layout_constraintEnd_toStartOf="@+id/counter2"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/counter2"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="@dimen/tab_counter_top_margin"
+            android:background="@drawable/bg_tab_active"
+            android:gravity="center"
+            android:text="2"
+            app:layout_constraintEnd_toStartOf="@+id/counter3"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@+id/counter1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/counter3"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="@dimen/tab_counter_top_margin"
+            android:background="@drawable/bg_tab_active"
+            android:gravity="center"
+            android:text="3"
+            android:layout_marginEnd="@dimen/tab_counter_horizontal_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@+id/counter2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_margin="4dp"
+            android:background="@color/gray_tab_separator"
+            app:layout_constraintBottom_toBottomOf="@id/counter1"
+            app:layout_constraintEnd_toStartOf="@id/counter2"
+            app:layout_constraintStart_toEndOf="@id/counter1"
+            app:layout_constraintTop_toTopOf="@id/counter1" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_margin="4dp"
+            android:background="@color/gray_tab_separator"
+            app:layout_constraintBottom_toBottomOf="@id/counter1"
+            app:layout_constraintEnd_toStartOf="@id/counter3"
+            app:layout_constraintStart_toEndOf="@id/counter2"
+            app:layout_constraintTop_toTopOf="@id/counter1" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tab1Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/tab_1_title"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/counter1"
+            app:layout_constraintStart_toStartOf="@+id/counter1"
+            app:layout_constraintTop_toBottomOf="@+id/counter1" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tab2Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/tab_2_title"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/counter2"
+            app:layout_constraintStart_toStartOf="@+id/counter2"
+            app:layout_constraintTop_toBottomOf="@+id/counter2" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tab3Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/tab_3_title"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/counter3"
+            app:layout_constraintStart_toStartOf="@+id/counter3"
+            app:layout_constraintTop_toBottomOf="@+id/counter3" />
+
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/tab_1_subtitle"
+            android:textSize="@dimen/tab_counter_subtitle_text_size"
+            app:layout_constraintEnd_toEndOf="@+id/counter1"
+            app:layout_constraintStart_toStartOf="@+id/counter1"
+            app:layout_constraintTop_toBottomOf="@+id/tab1Title" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tab2SubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/tab_2_subtitle"
+            android:textSize="@dimen/tab_counter_subtitle_text_size"
+            app:layout_constraintEnd_toEndOf="@+id/counter2"
+            app:layout_constraintStart_toStartOf="@+id/counter2"
+            app:layout_constraintTop_toBottomOf="@+id/tab2Title" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/tab_3_subtitle"
+            android:textSize="@dimen/tab_counter_subtitle_text_size"
+            app:layout_constraintEnd_toEndOf="@+id/counter3"
+            app:layout_constraintStart_toStartOf="@+id/counter3"
+            app:layout_constraintTop_toBottomOf="@+id/tab3Title" />
+
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/usedInterfacesHint"
+            app:layout_constraintTop_toBottomOf="@id/tab2SubTitle"
+            android:layout_marginTop="@dimen/tab_counter_top_margin"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/field_patent_used_interfaces"
+            style="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/usedInterfacesField"
+            app:layout_constraintTop_toBottomOf="@id/usedInterfacesHint"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/usedInterfacesAdd"
+            app:layout_constraintTop_toBottomOf="@id/usedInterfacesField"
+            android:text="@string/action_add"
+            android:background="@drawable/bg_button"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/prevButton3"
+            android:background="@drawable/bg_button"
+            android:textColor="@color/white"
+            android:text="@string/action_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/nextButton3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/usedInterfacesAdd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="8dp" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/nextButton3"
+            android:background="@drawable/bg_button_accent"
+            android:textColor="@color/white"
+            android:text="@string/action_save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/prevButton3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/usedInterfacesAdd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v4.widget.NestedScrollView>

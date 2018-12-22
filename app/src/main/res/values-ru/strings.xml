@@ -28,7 +28,10 @@
     <string name="field_patent_description_type_hint">Тип</string>
     <string name="field_patent_add_file">Добавить файл алгоритма</string>
 
+    <string name="field_patent_used_interfaces">Используемые интерфейсы</string>
+
     <string name="action_add">Добавить</string>
+    <string name="action_save">Сохранить</string>
 
 
     <string name="action_next">Далее</string>
