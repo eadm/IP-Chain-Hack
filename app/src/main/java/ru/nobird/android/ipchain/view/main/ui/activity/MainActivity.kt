@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_main.*
 import ru.nobird.android.ipchain.App
 import ru.nobird.android.ipchain.R
 import ru.nobird.android.ipchain.presentation.main.MainPresenter
@@ -22,6 +23,10 @@ class MainActivity : AppCompatActivity() {
 
         injectComponent()
         presenter = ViewModelProviders.of(this, viewModelFactory).get(MainPresenter::class.java)
+
+        button.setOnClickListener {
+            presenter.fetchObjectTypes()
+        }
     }
 
     private fun injectComponent() {

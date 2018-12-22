@@ -10,7 +10,6 @@ class RemoteDataSourceImpl
 constructor(
     private val restService: RestService
 ) {
-
     fun postTransaction(channelId: String, transaction: Transaction): Single<TransactionRegistred> =
         restService.postTransaction(channelId, transaction)
 
