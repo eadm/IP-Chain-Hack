@@ -1,6 +1,7 @@
 package ru.nobird.android.ipchain
 
 import android.app.Application
+import com.facebook.stetho.Stetho
 import ru.nobird.android.ipchain.view.injection.AppComponent
 import ru.nobird.android.ipchain.view.injection.DaggerAppComponent
 
@@ -19,5 +20,7 @@ class App : Application() {
             .builder()
             .context(this)
             .build()
+
+        Stetho.initializeWithDefaults(this)
     }
 }

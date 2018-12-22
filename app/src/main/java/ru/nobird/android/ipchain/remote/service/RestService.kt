@@ -8,22 +8,22 @@ import ru.nobird.android.ipchain.remote.model.Transaction
 import ru.nobird.android.ipchain.remote.model.TransactionRegistred
 
 interface RestService {
-    @POST("/:channelID/transactions")
+    @POST("/{channelID}/transactions")
     fun postTransaction(
-        @Path(":channelID") channelId: String,
+        @Path("channelID") channelId: String,
         @Body transaction: Transaction
     ): Single<TransactionRegistred>
 
-    @GET("/:channelID/transactions/:transactionID")
+    @GET("/{channelID}/transactions/{transactionID}")
     fun getTransaction(
-        @Path(":transactionID") transactionId: String,
-        @Path(":channelID") channelId: String
+        @Path("transactionID") transactionId: String,
+        @Path("channelID") channelId: String
     ): Single<Transaction>
 
-    @GET("/:channelID/objects/:objectID/transactions")
+    @GET("/{channelID}/objects/{objectID}/transactions")
     fun getTransactionByObject(
-        @Path(":objectID") objectId: String,
-        @Path(":channelID") channelId: String
+        @Path("objectID") objectId: String,
+        @Path("channelID") channelId: String
     ): Single<ObjectDataTransactions>
 
     @GET("/search/objects/IPObject/")

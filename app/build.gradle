@@ -55,4 +55,7 @@ dependencies {
 
     implementation libraries.glide
     implementation libraries.glideTransformations
+
+    implementation libraries.stetho
+    implementation libraries.stethoOkHttp
 }

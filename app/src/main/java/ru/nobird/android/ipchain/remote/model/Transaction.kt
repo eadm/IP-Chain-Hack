@@ -5,13 +5,13 @@ import com.google.gson.annotations.SerializedName
 
 class Transaction(
     @SerializedName("type")
-    val type: Type,
+    val type: Type? = null,
     @SerializedName("ccID")
-    val ccid: String,
+    val ccid: String? = null,
     @SerializedName("formatID")
-    val formatId: String,
+    val formatId: String? = null,
     @SerializedName("objID")
-    val objId: String,
+    val objId: String? = null,
     @SerializedName("data")
     val data: JsonElement
 ) {

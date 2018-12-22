@@ -1,5 +1,6 @@
 package ru.nobird.android.ipchain.view.injection.remote
 
+import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
@@ -28,6 +29,7 @@ class RemoteModule {
                     .build()
                 chain.proceed(request)
             }
+            .addNetworkInterceptor(StethoInterceptor())
             .build()
 
     @Provides

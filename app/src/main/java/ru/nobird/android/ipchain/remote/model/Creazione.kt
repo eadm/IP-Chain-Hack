@@ -5,29 +5,29 @@ import com.google.gson.annotations.SerializedName
 
 class Creazione(
     @SerializedName("crCodes")
-    val crCodes: Int,
+    val crCodes: List<Int>? = null,
     @SerializedName("nameIP")
-    val nameIp: String,
+    val nameIp: String? = null,
     @SerializedName("typeIP")
-    val typeIp: String,
+    val typeIp: String? = null,
     @SerializedName("created")
-    val created: String,
+    val created: String? = null,
     @SerializedName("usedIP")
-    val usedIp: List<UsedIp>,
+    val usedIp: List<UsedIp>? = null,
     @SerializedName("refIP")
-    val refIp: List<RefIp>,
+    val refIp: List<RefIp>? = null,
     @SerializedName("actorIP")
-    val actorIp: List<Actor>,
+    val actorIp: List<Actor>? = null,
     @SerializedName("depLnk")
-    val depLnk: String,
+    val depLnk: String? = null,
     @SerializedName("openDtLnk")
-    val openDtLnk: String,
+    val openDtLnk: String? = null,
     @SerializedName("openDtHash")
-    val openDtHash: String,
+    val openDtHash: String? = null,
     @SerializedName("description")
-    val description: String,
+    val description: String? = null,
     @SerializedName("orgID")
-    val orgId: String,
+    val orgId: String? = null,
     @SerializedName("trOthAttr")
-    val trOthAttr: JsonElement
+    val trOthAttr: JsonElement? = null
 )

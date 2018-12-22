@@ -40,9 +40,10 @@ class PatentActivity : AppCompatActivity() {
         pager.post {
             pager.nextButton1.setOnClickListener { pager.currentItem++ }
             pager.nextButton2.setOnClickListener { pager.currentItem++ }
-            pager.nextButton3.setOnClickListener { pager.currentItem++ }
             pager.prevButton2.setOnClickListener { pager.currentItem-- }
             pager.prevButton3.setOnClickListener { pager.currentItem-- }
+
+            pager.nextButton3.setOnClickListener { presenter.createTransaction() }
         }
     }
 
@@ -53,7 +54,11 @@ class PatentActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean =
         if (item?.itemId == android.R.id.home) {
-            onBackPressed()
+            if (pager.currentItem > 0) {
+                pager.currentItem--
+            } else {
+                onBackPressed()
+            }
             true
         } else {
             super.onOptionsItemSelected(item)
