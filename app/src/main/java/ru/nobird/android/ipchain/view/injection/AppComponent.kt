@@ -6,6 +6,7 @@ import dagger.Component
 import ru.nobird.android.ipchain.view.injection.main.MainModule
 import ru.nobird.android.ipchain.view.injection.remote.RemoteModule
 import ru.nobird.android.ipchain.view.injection.view.ViewModule
+import ru.nobird.android.ipchain.view.patent.ui.activity.PatentActivity
 import ru.nobird.android.ipchain.view.patents.ui.activity.PatentsActivity
 
 @Component(modules = [
@@ -25,5 +26,6 @@ interface AppComponent {
     }
 
     fun inject(mainActivity: PatentsActivity)
+    fun inject(patentActivity: PatentActivity)
 
 }

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name" translatable="false">IP Chain</string>
     <string name="patents_title">Patents</string>
+    <string name="patent_title">Add a patent</string>
 </resources>
