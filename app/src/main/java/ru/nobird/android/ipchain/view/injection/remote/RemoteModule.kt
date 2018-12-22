@@ -12,13 +12,22 @@ import ru.nobird.android.ipchain.remote.service.RestService
 @Module
 class RemoteModule {
     companion object {
-        private const val HOST = ""
+        private const val HOST = "https://org1.hackathon1.ipchain.ru/"
+        private const val AUTH_HEADER = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjEwNzUyMDAsInJvbGUiOiJ3cml0ZXIifQ.r2QrkXesExFmufc4d1LEQo_rRryWJbsmAAghPqc8zMY"
     }
 
     @Provides
     internal fun provideHttpClient(): OkHttpClient =
         OkHttpClient
             .Builder()
+            .addNetworkInterceptor { chain ->
+                val request = chain
+                    .request()
+                    .newBuilder()
+                    .addHeader("Authorization", AUTH_HEADER)
+                    .build()
+                chain.proceed(request)
+            }
             .build()
 
     @Provides
