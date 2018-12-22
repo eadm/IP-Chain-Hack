@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="ru.nobird.android.ipchain.view.main.ui.activity.MainActivity">
+        <activity android:name="ru.nobird.android.ipchain.view.patents.ui.activity.PatentsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

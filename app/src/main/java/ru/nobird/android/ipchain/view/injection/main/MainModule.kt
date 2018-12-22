@@ -5,14 +5,14 @@ import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
 import ru.nobird.android.ipchain.presentation.base.injection.ViewModelKey
-import ru.nobird.android.ipchain.presentation.main.MainPresenter
+import ru.nobird.android.ipchain.presentation.patents.PatentsPresenter
 
 @Module
 abstract class MainModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(MainPresenter::class)
-    internal abstract fun bindMainPresenter(mainPresenter: MainPresenter): ViewModel
+    @ViewModelKey(PatentsPresenter::class)
+    internal abstract fun bindMainPresenter(mainPresenter: PatentsPresenter): ViewModel
 
 }

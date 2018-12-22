@@ -1,4 +1,4 @@
-package ru.nobird.android.ipchain.view.main.ui.activity
+package ru.nobird.android.ipchain.view.patents.ui.activity
 
 import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
@@ -7,12 +7,12 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 import ru.nobird.android.ipchain.App
 import ru.nobird.android.ipchain.R
-import ru.nobird.android.ipchain.presentation.main.MainPresenter
+import ru.nobird.android.ipchain.presentation.patents.PatentsPresenter
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class PatentsActivity : AppCompatActivity() {
 
-    private lateinit var presenter: MainPresenter
+    private lateinit var presenter: PatentsPresenter
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         injectComponent()
-        presenter = ViewModelProviders.of(this, viewModelFactory).get(MainPresenter::class.java)
+        presenter = ViewModelProviders.of(this, viewModelFactory).get(PatentsPresenter::class.java)
 
         button.setOnClickListener {
             presenter.fetchObjectTypes()

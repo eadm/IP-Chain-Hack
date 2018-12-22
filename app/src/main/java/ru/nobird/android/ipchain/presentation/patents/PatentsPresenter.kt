@@ -1,4 +1,4 @@
-package ru.nobird.android.ipchain.presentation.main
+package ru.nobird.android.ipchain.presentation.patents
 
 import android.util.Log
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -9,11 +9,11 @@ import ru.nobird.android.ipchain.domain.usecase.GetObjectTypesUseCase
 import ru.nobird.android.ipchain.presentation.base.PresenterBase
 import javax.inject.Inject
 
-class MainPresenter
+class PatentsPresenter
 @Inject
 constructor(
     private val getObjectTypes: GetObjectTypesUseCase
-): PresenterBase<MainView>() {
+): PresenterBase<PatentsView>() {
 
     fun fetchObjectTypes() {
         compositeDisposable += getObjectTypes()
