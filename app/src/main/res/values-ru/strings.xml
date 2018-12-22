@@ -14,4 +14,12 @@
 
     <string name="field_patent_title">Заглавие</string>
     <string name="field_patent_annotation">Аннотация</string>
+    <string name="field_patent_authors">Авторы</string>
+    <string name="field_patent_keywords">Ключевые слова</string>
+    <string name="field_patent_organization">Организация</string>
+    <string name="field_patent_country">Страна</string>
+
+
+    <string name="action_next">Далее</string>
+    <string name="action_back">Назад</string>
 </resources>
