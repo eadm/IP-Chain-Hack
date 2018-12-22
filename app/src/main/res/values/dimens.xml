@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tab_counter_horizontal_margin">56dp</dimen>
+    <dimen name="tab_counter_top_margin">24dp</dimen>
+
+    <dimen name="tab_counter_subtitle_text_size">8sp</dimen>
+</resources>
