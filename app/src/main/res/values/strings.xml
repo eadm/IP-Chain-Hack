@@ -25,6 +25,7 @@
     <string name="field_patent_output_data">Output data</string>
 
     <string name="field_patent_description_type">Description type</string>
+    <string name="field_patent_description_type_hint">Type</string>
     <string name="field_patent_add_file">Add file</string>
 
     <string name="action_add">Add</string>

@@ -25,6 +25,7 @@
     <string name="field_patent_output_data">Выходные данные</string>
 
     <string name="field_patent_description_type">Тип описания</string>
+    <string name="field_patent_description_type_hint">Тип</string>
     <string name="field_patent_add_file">Добавить файл алгоритма</string>
 
     <string name="action_add">Добавить</string>

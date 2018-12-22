@@ -183,19 +183,54 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/outputField"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/outputTypeFieldLayout"
             app:layout_constraintTop_toBottomOf="@id/outputDataHint"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:hintEnabled="true">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/outputTypeField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/field_patent_keywords"
+                android:imeOptions="flagNoFullscreen"
+                android:inputType="text" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/outputDescriptionFieldLayout"
+            app:layout_constraintTop_toBottomOf="@id/outputTypeFieldLayout"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:hintEnabled="true">
+
+            <android.support.v7.widget.AppCompatAutoCompleteTextView
+                android:id="@+id/outputDescriptionField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/field_patent_organization"
+                android:imeOptions="flagNoFullscreen"
+                android:inputType="text" />
+
+        </android.support.design.widget.TextInputLayout>
 
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/descriptionTypeHint"
-            app:layout_constraintTop_toBottomOf="@id/outputField"
+            app:layout_constraintTop_toBottomOf="@id/outputDescriptionFieldLayout"
             android:layout_marginTop="@dimen/tab_counter_top_margin"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
@@ -206,10 +241,36 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/descriptionTypeFieldLayout"
+            app:layout_constraintTop_toBottomOf="@id/descriptionTypeHint"
+            android:layout_marginTop="@dimen/tab_counter_top_margin"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/field_patent_description_type_hint"
+                android:textSize="12sp" />
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/descriptionTypeField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp" />
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/addFileHint"
-            app:layout_constraintTop_toBottomOf="@id/descriptionTypeHint"
+            app:layout_constraintTop_toBottomOf="@id/descriptionTypeFieldLayout"
             android:layout_marginTop="@dimen/tab_counter_top_margin"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
