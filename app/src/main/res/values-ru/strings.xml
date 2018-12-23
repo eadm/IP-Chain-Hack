@@ -18,6 +18,8 @@
     <string name="field_patent_name">Имя</string>
     <string name="field_patent_type">Тип</string>
     <string name="field_patent_description">Описание</string>
+    <string name="field_patent_link">Ссылка</string>
+
 
     <string name="field_patent_title">Заглавие</string>
     <string name="field_patent_annotation">Аннотация</string>

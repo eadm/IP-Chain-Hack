@@ -76,6 +76,15 @@ class PatentActivity : AppCompatActivity() {
             pager.inputFieldAdd.setOnClickListener {
                 inputFieldAdapter.counter++
             }
+
+            val interfacesAdapter = InputDataAdapter(R.layout.item_interface)
+            with(pager.usedInterfacesField) {
+                adapter = interfacesAdapter
+                layoutManager = LinearLayoutManager(context)
+            }
+            pager.usedInterfacesAdd.setOnClickListener {
+                interfacesAdapter.counter++
+            }
         }
     }
 

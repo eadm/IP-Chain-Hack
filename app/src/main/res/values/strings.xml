@@ -18,6 +18,7 @@
     <string name="field_patent_name">Name</string>
     <string name="field_patent_type">Type</string>
     <string name="field_patent_description">Description</string>
+    <string name="field_patent_link">Link</string>
 
 
     
