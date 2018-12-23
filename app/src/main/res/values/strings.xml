@@ -20,7 +20,9 @@
     <string name="field_patent_description">Description</string>
     <string name="field_patent_link">Link</string>
 
-
+    <string name="loading">Loading</string>
+    <string name="loading_message">Please wait…</string>
+    <string name="error">Connection error</string>
     
     <string name="field_patent_title">Title</string>
     <string name="field_patent_annotation">Annotation</string>

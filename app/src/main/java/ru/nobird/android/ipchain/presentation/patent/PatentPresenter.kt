@@ -11,6 +11,7 @@ import ru.nobird.android.ipchain.presentation.base.PresenterBase
 import ru.nobird.android.ipchain.remote.model.Accesso
 import ru.nobird.android.ipchain.remote.model.Creazione
 import ru.nobird.android.ipchain.remote.model.Transaction
+import ru.nobird.android.ipchain.view.patent.model.Item
 import javax.inject.Inject
 
 class PatentPresenter
@@ -22,6 +23,8 @@ constructor(
 
 
     fun createTransaction(title: String) {
+        view?.showLoading()
+
         val cData = Creazione(
             crCodes = listOf(0),
             nameIp = title, // title,
@@ -50,8 +53,8 @@ constructor(
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeBy(
-                onError = { it.printStackTrace() },
-                onSuccess = { Log.d("PatentPresenter", gson.toJson(it)) }
+                onError = { view?.hideLoading(); view?.onError() },
+                onSuccess = { view?.hideLoading(); view?.onSuccess(Item(title, it.timestamp)) }
             )
     }
 

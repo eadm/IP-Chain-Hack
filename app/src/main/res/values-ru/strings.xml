@@ -20,6 +20,9 @@
     <string name="field_patent_description">Описание</string>
     <string name="field_patent_link">Ссылка</string>
 
+    <string name="loading">Загрузка</string>
+    <string name="loading_message">Пожалуйста, подождите…</string>
+    <string name="error">Ошибка соединения</string>
 
     <string name="field_patent_title">Заглавие</string>
     <string name="field_patent_annotation">Аннотация</string>

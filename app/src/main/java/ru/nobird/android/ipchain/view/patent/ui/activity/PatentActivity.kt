@@ -2,7 +2,10 @@ package ru.nobird.android.ipchain.view.patent.ui.activity
 
 import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Intent
 import android.os.Bundle
+import android.support.design.widget.Snackbar
+import android.support.v4.app.DialogFragment
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.MenuItem
@@ -14,15 +17,21 @@ import kotlinx.android.synthetic.main.view_patent_tab_3.view.*
 import ru.nobird.android.ipchain.App
 import ru.nobird.android.ipchain.R
 import ru.nobird.android.ipchain.presentation.patent.PatentPresenter
+import ru.nobird.android.ipchain.presentation.patent.PatentView
 import ru.nobird.android.ipchain.view.patent.model.Download
+import ru.nobird.android.ipchain.view.patent.model.Item
 import ru.nobird.android.ipchain.view.patent.ui.adapter.DownloadAdapter
 import ru.nobird.android.ipchain.view.patent.ui.adapter.InputDataAdapter
 import ru.nobird.android.ipchain.view.patent.ui.adapter.PatentPagerAdapter
 import ru.nobird.android.ipchain.view.patent.ui.dialog.AddAuthorDialogFragment
 import ru.nobird.android.ipchain.view.patent.ui.dialog.AddDonwloadDialog
+import ru.nobird.android.ipchain.view.patent.ui.dialog.LoadingProgressDialogFragment
 import javax.inject.Inject
 
-class PatentActivity : AppCompatActivity() {
+class PatentActivity : AppCompatActivity(), PatentView {
+    companion object {
+        const val RQ = 132
+    }
 
     private lateinit var presenter: PatentPresenter
 
@@ -121,6 +130,35 @@ class PatentActivity : AppCompatActivity() {
     private fun injectComponent() {
         App.component
             .inject(this)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        presenter.attachView(this)
+    }
+
+    override fun onStop() {
+        presenter.detachView(this)
+        super.onStop()
+    }
+
+    override fun showLoading() {
+        if (supportFragmentManager.findFragmentByTag(LoadingProgressDialogFragment.TAG) == null) {
+            LoadingProgressDialogFragment.newInstance().show(supportFragmentManager, LoadingProgressDialogFragment.TAG)
+        }
+    }
+
+    override fun hideLoading() {
+        (supportFragmentManager.findFragmentByTag(LoadingProgressDialogFragment.TAG) as? DialogFragment)?.dismiss()
+    }
+
+    override fun onSuccess(item: Item) {
+        setResult(RQ, Intent().putExtra("item", item))
+        finish()
+    }
+
+    override fun onError() {
+        Snackbar.make(pager, R.string.error, Snackbar.LENGTH_SHORT).show()
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean =
