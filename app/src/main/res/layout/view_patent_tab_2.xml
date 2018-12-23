@@ -166,8 +166,8 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="8dp"
             android:layout_marginStart="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="144dp"
+            android:layout_height="36dp" />
 
 
         <android.support.v7.widget.AppCompatTextView
@@ -199,7 +199,7 @@
                 android:id="@+id/outputTypeField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/field_patent_keywords"
+                android:hint="@string/field_patent_description_type"
                 android:imeOptions="flagNoFullscreen"
                 android:inputType="text" />
 
@@ -221,7 +221,7 @@
                 android:id="@+id/outputDescriptionField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/field_patent_organization"
+                android:hint="@string/field_patent_description_type"
                 android:imeOptions="flagNoFullscreen"
                 android:inputType="text" />
 
@@ -263,7 +263,8 @@
                 android:id="@+id/descriptionTypeField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp" />
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="-6dp" />
 
         </android.support.v7.widget.LinearLayoutCompat>
 
@@ -289,8 +290,8 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="8dp"
             android:layout_marginStart="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="144dp"
+            android:layout_height="36dp" />
 
 
         <android.support.v7.widget.AppCompatButton

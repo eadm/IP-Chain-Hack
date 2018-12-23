@@ -5,6 +5,7 @@ import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
+import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_patent.*
 import kotlinx.android.synthetic.main.view_patent_tab_1.view.*
 import kotlinx.android.synthetic.main.view_patent_tab_2.view.*
@@ -43,7 +44,21 @@ class PatentActivity : AppCompatActivity() {
             pager.prevButton2.setOnClickListener { pager.currentItem-- }
             pager.prevButton3.setOnClickListener { pager.currentItem-- }
 
-            pager.nextButton3.setOnClickListener { presenter.createTransaction() }
+            pager.nextButton3.setOnClickListener {
+                presenter.createTransaction(pager.titleField.text.toString())
+            }
+
+            pager.descriptionTypeField.adapter =
+                    ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, resources.getStringArray(R.array.description_types)).apply {
+                        setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                    }
+
+            pager.countryField.adapter =
+                    ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, resources.getStringArray(R.array.countries_array)).apply {
+                        setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                    }
+
+            
         }
     }
 

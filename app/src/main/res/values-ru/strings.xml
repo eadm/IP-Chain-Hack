@@ -36,4 +36,10 @@
 
     <string name="action_next">Далее</string>
     <string name="action_back">Назад</string>
+
+    <string-array name="description_types">
+        <item>Блок-схема</item>
+        <item>Псевдокод</item>
+        <item>Исходный код</item>
+    </string-array>
 </resources>
