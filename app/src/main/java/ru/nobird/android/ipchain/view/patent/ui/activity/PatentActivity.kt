@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
 import android.view.MenuItem
 import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_patent.*
@@ -13,7 +14,9 @@ import kotlinx.android.synthetic.main.view_patent_tab_3.view.*
 import ru.nobird.android.ipchain.App
 import ru.nobird.android.ipchain.R
 import ru.nobird.android.ipchain.presentation.patent.PatentPresenter
+import ru.nobird.android.ipchain.view.patent.ui.adapter.InputDataAdapter
 import ru.nobird.android.ipchain.view.patent.ui.adapter.PatentPagerAdapter
+import ru.nobird.android.ipchain.view.patent.ui.dialog.AddAuthorDialogFragment
 import javax.inject.Inject
 
 class PatentActivity : AppCompatActivity() {
@@ -59,8 +62,29 @@ class PatentActivity : AppCompatActivity() {
                     }
 
             pager.addAuthor.setOnClickListener {
-
+                AddAuthorDialogFragment
+                    .newInstance()
+                    .show(supportFragmentManager, AddAuthorDialogFragment.TAG)
             }
+
+            val inputFieldAdapter = InputDataAdapter(R.layout.item_input_data)
+            with(pager.inputField) {
+                adapter = inputFieldAdapter
+                layoutManager = LinearLayoutManager(context)
+            }
+
+            pager.inputFieldAdd.setOnClickListener {
+                inputFieldAdapter.counter++
+            }
+        }
+    }
+
+    fun addAuthor(author: String) {
+        val authorsField = pager.authorsField
+        if (authorsField.text.isEmpty()) {
+            authorsField.text = author
+        } else {
+            authorsField.text = authorsField.text.toString() + ", $author"
         }
     }
 

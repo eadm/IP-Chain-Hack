@@ -199,7 +199,7 @@
                 android:id="@+id/outputTypeField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/field_patent_description_type"
+                android:hint="@string/field_patent_type"
                 android:imeOptions="flagNoFullscreen"
                 android:inputType="text" />
 
@@ -221,7 +221,7 @@
                 android:id="@+id/outputDescriptionField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/field_patent_description_type"
+                android:hint="@string/field_patent_description"
                 android:imeOptions="flagNoFullscreen"
                 android:inputType="text" />
 

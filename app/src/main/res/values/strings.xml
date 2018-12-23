@@ -11,6 +11,15 @@
 
     <string name="tab_3_title">Interface</string>
     <string name="tab_3_subtitle">add interfaces</string>
+
+    <string name="field_patent_first_name">First name</string>
+    <string name="field_patent_second_name">Last name</string>
+
+    <string name="field_patent_name">Name</string>
+    <string name="field_patent_type">Type</string>
+    <string name="field_patent_description">Description</string>
+
+
     
     <string name="field_patent_title">Title</string>
     <string name="field_patent_annotation">Annotation</string>

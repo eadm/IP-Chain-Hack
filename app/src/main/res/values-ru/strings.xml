@@ -12,6 +12,13 @@
     <string name="tab_3_title">Интерфейсы</string>
     <string name="tab_3_subtitle">добавление интерфейсов</string>
 
+    <string name="field_patent_first_name">Имя</string>
+    <string name="field_patent_second_name">Фамилия</string>
+
+    <string name="field_patent_name">Имя</string>
+    <string name="field_patent_type">Тип</string>
+    <string name="field_patent_description">Описание</string>
+
     <string name="field_patent_title">Заглавие</string>
     <string name="field_patent_annotation">Аннотация</string>
     <string name="field_patent_authors">Авторы</string>
