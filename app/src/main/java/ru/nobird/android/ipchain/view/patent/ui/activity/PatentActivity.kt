@@ -58,7 +58,9 @@ class PatentActivity : AppCompatActivity() {
                         setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
                     }
 
-            
+            pager.addAuthor.setOnClickListener {
+
+            }
         }
     }
 
@@ -69,13 +71,17 @@ class PatentActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean =
         if (item?.itemId == android.R.id.home) {
-            if (pager.currentItem > 0) {
-                pager.currentItem--
-            } else {
-                onBackPressed()
-            }
+            finish()
             true
         } else {
             super.onOptionsItemSelected(item)
         }
+
+    override fun onBackPressed() {
+        if (pager.currentItem > 0) {
+            pager.currentItem--
+        } else {
+            super.onBackPressed()
+        }
+    }
 }
