@@ -23,7 +23,7 @@ class PatentsActivity : AppCompatActivity() {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
-    private val adapter = DownloadAdapter()
+    private val adapter = DownloadAdapter(isInDownloadAddMode = true)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

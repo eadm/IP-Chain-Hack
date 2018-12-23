@@ -9,15 +9,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <android.support.v7.widget.AppCompatTextView
+        <android.support.v7.widget.AppCompatImageView
             android:id="@+id/counter1"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginTop="@dimen/tab_counter_top_margin"
-            android:background="@drawable/bg_tab_active"
+            android:background="@drawable/bg_tab_completed"
             android:gravity="center"
             android:layout_marginStart="@dimen/tab_counter_horizontal_margin"
-            android:text="1"
+            app:srcCompat="@drawable/ic_complete"
+            android:padding="5dp"
             app:layout_constraintEnd_toStartOf="@+id/counter2"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toStartOf="parent"
