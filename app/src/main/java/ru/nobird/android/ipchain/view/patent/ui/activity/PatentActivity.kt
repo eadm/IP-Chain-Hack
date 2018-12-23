@@ -14,9 +14,12 @@ import kotlinx.android.synthetic.main.view_patent_tab_3.view.*
 import ru.nobird.android.ipchain.App
 import ru.nobird.android.ipchain.R
 import ru.nobird.android.ipchain.presentation.patent.PatentPresenter
+import ru.nobird.android.ipchain.view.patent.model.Download
+import ru.nobird.android.ipchain.view.patent.ui.adapter.DownloadAdapter
 import ru.nobird.android.ipchain.view.patent.ui.adapter.InputDataAdapter
 import ru.nobird.android.ipchain.view.patent.ui.adapter.PatentPagerAdapter
 import ru.nobird.android.ipchain.view.patent.ui.dialog.AddAuthorDialogFragment
+import ru.nobird.android.ipchain.view.patent.ui.dialog.AddDonwloadDialog
 import javax.inject.Inject
 
 class PatentActivity : AppCompatActivity() {
@@ -25,6 +28,8 @@ class PatentActivity : AppCompatActivity() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
+
+    private val downloadAdapter = DownloadAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -85,6 +90,17 @@ class PatentActivity : AppCompatActivity() {
             pager.usedInterfacesAdd.setOnClickListener {
                 interfacesAdapter.counter++
             }
+
+            with(pager.files) {
+                adapter = downloadAdapter
+                layoutManager = LinearLayoutManager(context)
+            }
+
+            pager.addFile.setOnClickListener {
+                AddDonwloadDialog
+                    .newInstance()
+                    .show(supportFragmentManager, AddDonwloadDialog.TAG)
+            }
         }
     }
 
@@ -95,6 +111,11 @@ class PatentActivity : AppCompatActivity() {
         } else {
             authorsField.text = authorsField.text.toString() + ", $author"
         }
+    }
+
+    fun addDownload(download: Download) {
+        downloadAdapter.downloads.add(download)
+        downloadAdapter.notifyItemInserted(downloadAdapter.itemCount - 1)
     }
 
     private fun injectComponent() {

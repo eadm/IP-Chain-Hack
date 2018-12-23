@@ -27,7 +27,9 @@ ext.versions = [
         glide                : '3.7.0',
         glideTransformations : '2.0.2',
 
-        stetho               : '1.4.2'
+        stetho               : '1.4.2',
+        materialDialog       : '2.1',
+        materialDialogCore   : '0.9.6.0'
 ]
 
 ext.gradlePlugins = [
@@ -63,5 +65,8 @@ ext.libraries = [
         glideTransformations : "jp.wasabeef:glide-transformations:$versions.glideTransformations",
 
         stetho               : "com.facebook.stetho:stetho:$versions.stetho",
-        stethoOkHttp         : "com.facebook.stetho:stetho-okhttp3:$versions.stetho"
+        stethoOkHttp         : "com.facebook.stetho:stetho-okhttp3:$versions.stetho",
+
+        materialDialog       : "com.github.javiersantos:MaterialStyledDialogs:$versions.materialDialog",
+        materialDialogCore   : "com.afollestad.material-dialogs:core:$versions.materialDialogCore"
 ]

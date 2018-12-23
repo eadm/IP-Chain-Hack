@@ -58,4 +58,7 @@ dependencies {
 
     implementation libraries.stetho
     implementation libraries.stethoOkHttp
+
+    implementation libraries.materialDialog
+    implementation libraries.materialDialogCore
 }
